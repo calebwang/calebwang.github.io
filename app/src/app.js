@@ -1,36 +1,66 @@
 import React from 'react';
+import linkedin from './linkedin.png';
+import facebook from "./facebook.png";
+import instagram from "./instagram.png";
+import twitter from "./twitter.png";
+import github from "./github.png";
 import './app.css';
 
 class App extends React.Component {
   render() {
     return <div className="app-root">
         <Header/>
-        <Menu/>
+        <Content/>
     </div>;
   }
 }
 
 class Header extends React.Component {
   render() {
-    return <div className="header">Caleb Wang</div>;
+    return <div className="header">caleb</div>;
   }
 }
 
-class Links extends React.Component {
+class Content extends React.Component {
   render() {
-    const menuItems = [
-      <div className="menuItem">foo</div>,
-      <div className="menuItem">bar</div>
+    return <div className="content"><References/></div>;
+  }
+}
+
+class References extends React.Component {
+  render() {
+    const items = [
+      <Reference
+          img={facebook}
+          name="Facebook"
+          url="https://www.facebook.com/calebwang"/>,
+      <Reference
+          img={linkedin}
+          url="https://www.linkedin.com/in/calebdwang"
+          name="LinkedIn"/>,
+      <Reference
+          img={instagram}
+          url="https://www.instagram.com/calebdwang"
+          name="Instagram"/>,
+      <Reference
+          img={twitter}
+          url="https://www.twitter.com/calebdwang"
+          name="Twitter"/>,
+      <Reference
+          img={github}
+          url="https://www.github.com/calebwang"
+          name="GitHub"/>
+      // email, resume, blog
     ]
-    return <div className="links">{menuItems}</div>;
+    return <div className="references">{items}</div>;
   }
 }
 
-class Link extends React.Component {
+class Reference extends React.Component {
   render() {
-    <a href={this.props.url}>
-      <img src={this.props.img}>
-    </a>
+    return <a className="reference" href={this.props.url}>
+      <img src={this.props.img} className="reference-img" alt={this.props.name}/>
+    </a>;
   }
 }
 

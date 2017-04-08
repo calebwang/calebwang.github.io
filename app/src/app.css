@@ -4,23 +4,34 @@
   display: flex;
   flex: 1;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 }
 
 .header {
-  margin-top: 75px;
   margin-bottom: 25px;
   display: flex;
-  font-size: 36px;
+  font-size: 80px;
+  padding-left: 40px;
+  border-bottom: 3px solid #3399cc;
 }
 
-.links {
+.content {
+  margin-left: 40px;
+}
+
+.references {
   display: flex;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: flex-start;
   width: 100%;
 }
 
-.menuItem {
-  display: flex;
+.reference {
+  min-width: 160px;
+}
+
+.reference-img {
+  width: 80px;
+  height: 80px;
 }
