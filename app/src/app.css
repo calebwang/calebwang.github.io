@@ -8,40 +8,29 @@
   justify-content: center;
 }
 
-.header-wrapper {
-  width: 100%;
-  display: flex;
-}
-
 .header {
-  margin-bottom: 25px;
-  flex: 1 0;
+  border-bottom: 3px solid #3399cc;
   display: flex;
+  flex: 1 0;
   font-size: 80px;
+  margin-bottom: 25px;
   padding-bottom: 10px;
   padding-left: 40px;
-  border-bottom: 3px solid #3399cc;
-  width: 100%;
-}
-
-.content-wrapper {
-  display: flex;
   width: 100%;
 }
 
 .content {
+  display: flex;
+  flex-direction: column;
   margin-left: 40px;
+  width: 100%;
 }
 
 .references {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: space-between;
   width: 100%;
-}
-
-.reference {
-  min-width: 160px;
 }
 
 .reference-img {
