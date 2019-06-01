@@ -9,21 +9,25 @@ import './app.css';
 class App extends React.Component {
   render() {
     return <div className="app-root">
-        <Header/>
-        <Content/>
+      <Header/>
+      <Content/>
     </div>;
   }
 }
 
 class Header extends React.Component {
   render() {
-    return <div className="header">caleb wang</div>;
+    return <div className="header-container">
+      <div className="header">caleb wang</div>
+    </div>;
   }
 }
 
 class Content extends React.Component {
   render() {
-    return <div className="content"><References/></div>
+    return <div className="content-container">
+      <div className="content"><References/></div>
+    </div>
   }
 }
 
@@ -31,25 +35,25 @@ class References extends React.Component {
   render() {
     const items = [
       <Reference
-          img={facebook}
-          name="Facebook"
-          url="https://www.facebook.com/calebwang"/>,
+        img={facebook}
+        name="Facebook"
+        url="https://www.facebook.com/calebwang"/>,
       <Reference
-          img={linkedin}
-          url="https://www.linkedin.com/in/calebdwang"
-          name="LinkedIn"/>,
+        img={linkedin}
+        url="https://www.linkedin.com/in/calebdwang"
+        name="LinkedIn"/>,
       <Reference
-          img={instagram}
-          url="https://www.instagram.com/calebdwang"
-          name="Instagram"/>,
+        img={instagram}
+        url="https://www.instagram.com/calebdwang"
+        name="Instagram"/>,
       <Reference
-          img={twitter}
-          url="https://www.twitter.com/calebdwang"
-          name="Twitter"/>,
+        img={twitter}
+        url="https://www.twitter.com/calebdwang"
+        name="Twitter"/>,
       <Reference
-          img={github}
-          url="https://www.github.com/calebwang"
-          name="GitHub"/>
+        img={github}
+        url="https://www.github.com/calebwang"
+        name="GitHub"/>
       // email, resume, blog
     ]
     return <div className="references">{items}</div>;
@@ -58,9 +62,11 @@ class References extends React.Component {
 
 class Reference extends React.Component {
   render() {
-    return <a className="reference" href={this.props.url}>
-      <img src={this.props.img} className="reference-img" alt={this.props.name}/>
-    </a>;
+    return <div className="reference-container">
+      <a className="reference" href={this.props.url}>
+        <img src={this.props.img} className="reference-img" alt={this.props.name}/>
+      </a>
+    </div>;
   }
 }
 
