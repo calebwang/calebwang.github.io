@@ -17,17 +17,13 @@ class App extends React.Component {
 
 class Header extends React.Component {
   render() {
-    return <div className="header-wrapper">
-      <div className="header">caleb wang</div>
-    </div>;
+    return <div className="header">caleb wang</div>;
   }
 }
 
 class Content extends React.Component {
   render() {
-    return <div className="content-wrapper">
-      <div className="content"><References/></div>
-    </div>
+    return <div className="content"><References/></div>
   }
 }
 
