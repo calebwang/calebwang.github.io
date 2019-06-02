@@ -7,6 +7,8 @@ import twitter from "./twitter.png";
 import github from "./github.png";
 import "./app.css";
 
+const HEADER_RIGHT_PADDING=40;
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -15,11 +17,21 @@ class App extends React.Component {
       contentOffset: 0
     };
   }
-
+  
+  width() {
+    const node = ReactDOM.findDOMNode(this);
+    if (node) {
+      return node.getBoundingClientRect().width; 
+    }
+    return 0;
+  }
+  
   resize() {
-    this.setState({
-      contentOffset: this.contentRef.current.contentOffset()
-    });
+    if (this.width() >= 1000) {
+      this.setState({
+        contentOffset: this.contentRef.current.contentOffset(),
+      });
+    }
   }
 
   componentDidMount() {
@@ -28,19 +40,27 @@ class App extends React.Component {
 
   render() {
     return <div className="app-root">
-      <Header offset={this.state.contentOffset} />
+      <Header style={this._headerStyle()} ref={this.headerRef} />
       <Content ref={this.contentRef} />
     </div>;
+  }
+
+  _headerStyle() {
+    if (this.width() >= 1000) {
+      return {
+        "padding-left": this.state.contentOffset,
+        "padding-right": HEADER_RIGHT_PADDING + "px"
+      }
+    } else {
+      return {};
+    }
   }
 }
 
 class Header extends React.Component {
   render() {
-    const style = {
-      "padding-left": this.props.offset
-    };
     return <div className="header-container">
-      <div className="header" style={style}>caleb wang</div>
+      <div className="header" style={this.props.style}>caleb wang</div>
     </div>;
   }
 }
@@ -71,7 +91,7 @@ class ImageLinks extends React.Component {
   contentOffset() {
     const myNode = ReactDOM.findDOMNode(this);     
     const firstImageLink = this.firstImageLinkRef.current;
-    return firstImageLink.offsetLeft() - myNode.offsetLeft;
+    return firstImageLink.left() - myNode.getBoundingClientRect().left;
   }
 
   render() {
@@ -109,8 +129,8 @@ class ImageLink extends React.Component {
     this.domRef = React.createRef();
   }
 
-  offsetLeft() {
-    return this.domRef.current.offsetLeft;
+  left() {
+    return this.domRef.current.getBoundingClientRect().left;
   }
   
   render() {
