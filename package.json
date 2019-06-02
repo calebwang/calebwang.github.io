@@ -4,8 +4,8 @@
   "private": true,
   "homepage": "https://calebwang.github.io",
   "dependencies": {
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "react": "16.8",
+    "react-dom": "16.8"
   },
   "devDependencies": {
     "gh-pages": "^2.0.1",

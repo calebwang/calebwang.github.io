@@ -20,35 +20,28 @@
   flex: 1 0;
   font-size: 80px;
   margin-bottom: 25px;
-  padding-bottom: 10px;
-  padding-left: 40px;
+  /* padding-left will be set via JS */
+  padding: 0 40px 10px 0px;
 }
-
-.content-container {
-  width: 100%; }
 
 .content {
   display: flex;
   flex-direction: column;
-  padding-left: 40px;
+  width: 100%; 
 }
 
 .references {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   width: 100%;
-}
-
-.references::after {
-  content: "";
-  flex-basis: 160px;
 }
 
 .reference-container {
   display: flex;
-  flex-basis: 160px;
+  flex-basis: 150px;
+  justify-content: center;
   margin-bottom: 10px;
 }
 
