@@ -1,8 +1,6 @@
 import React from "react";
 import linkedin from './linkedin.png';
-import facebook from "./facebook.png";
-import instagram from "./instagram.png";
-import twitter from "./twitter.png";
+import email from './email.png';
 import github from "./github.png";
 import "./app.css";
 
@@ -35,26 +33,18 @@ class ImageLinks extends React.Component {
   render() {
     const items = [
       <ImageLink
-        img={facebook}
-        name="Facebook"
-        url="https://www.facebook.com/calebwang"/>,
-      <ImageLink
         img={linkedin}
         url="https://www.linkedin.com/in/calebdwang"
         name="LinkedIn"/>,
       <ImageLink
-        img={instagram}
-        url="https://www.instagram.com/calebdwang"
-        name="Instagram"/>,
-      <ImageLink
-        img={twitter}
-        url="https://www.twitter.com/calebdwang"
-        name="Twitter"/>,
-      <ImageLink
         img={github}
         url="https://www.github.com/calebwang"
-        name="GitHub"/>
+        name="GitHub"/>,
       // email, resume, blog
+      <ImageLink
+        img={email}
+        url="mailto:caleb@caleb.wang"
+        name="Email"/>
     ]
     return <div className="references">{items}</div>;
   }
